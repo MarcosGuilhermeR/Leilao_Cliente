@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
  *
  * @author Stephany
  */
-public class IntDarLance extends javax.swing.JFrame {
+public class CadastroDeLance extends javax.swing.JFrame {
 
     public long codigoProduct;
     
@@ -34,7 +34,7 @@ public class IntDarLance extends javax.swing.JFrame {
      * @param description
      * @param currentBidS
      */
-    public IntDarLance(long codProduct, String product, String description, double currentBidS, String sellerName) {
+    public CadastroDeLance(long codProduct, String product, double currentBidS, String sellerName) {
         
         
         initComponents();
@@ -42,7 +42,6 @@ public class IntDarLance extends javax.swing.JFrame {
         this.codigoProduct = codProduct;
         
         productName.setText(product);
-        productDescription.setText(description);
         mynameis.setText(Cliente.mynameis);
         String lanceAtualtoString = String.valueOf(currentBidS);
         lanceAtual.setText(lanceAtualtoString);
@@ -75,7 +74,6 @@ public class IntDarLance extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         newbid = new javax.swing.JTextField();
@@ -93,8 +91,6 @@ public class IntDarLance extends javax.swing.JFrame {
         setBackground(java.awt.SystemColor.activeCaptionBorder);
 
         jLabel1.setText("Produto:");
-
-        jLabel2.setText("Descrição:");
 
         jLabel3.setText("Lance Atual:");
 
@@ -126,10 +122,8 @@ public class IntDarLance extends javax.swing.JFrame {
                         .addComponent(mynameis, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(submeterLance)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1)
+                        .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(productName, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
@@ -146,10 +140,7 @@ public class IntDarLance extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel2))
+                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(productName, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(22, 22, 22)
@@ -205,7 +196,7 @@ public class IntDarLance extends javax.swing.JFrame {
                 }
             
             } catch (RemoteException | NotBoundException ex) {
-                Logger.getLogger(IntCadProduto.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(CadastroDeProduto.class.getName()).log(Level.SEVERE, null, ex);
             }
             
             
@@ -240,7 +231,7 @@ public class IntDarLance extends javax.swing.JFrame {
                     }
             
                 } catch (RemoteException | NotBoundException ex) {
-                    Logger.getLogger(IntCadProduto.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(CadastroDeProduto.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
@@ -251,7 +242,6 @@ public class IntDarLance extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel currentBid;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

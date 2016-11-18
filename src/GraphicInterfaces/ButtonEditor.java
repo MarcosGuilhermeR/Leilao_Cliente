@@ -21,11 +21,10 @@ public class ButtonEditor extends DefaultCellEditor {
     protected JButton button;
     private String label;
     private boolean isPushed;
-    public long codProduct;
-    public String product;
-    public String description;
-    public double currentHighestBid;
-    public String sellerName;
+    public long codigoProduto;
+    public String nomeProduto;
+    public double maiorValorAtual;
+    public String nomeVendedor;
   
  
     public ButtonEditor(JCheckBox checkBox) {
@@ -55,11 +54,10 @@ public class ButtonEditor extends DefaultCellEditor {
         button.setText( label );
         isPushed = true;
     
-        this.codProduct = (long) table.getValueAt(row, 0);
-        this.product = (String) table.getValueAt(row, 1);
-        this.description = (String) table.getValueAt(row, 2);
-        this.currentHighestBid = (double) table.getValueAt(row, 3);
-        this.sellerName = (String) table.getValueAt(row, 5);
+        this.codigoProduto = (long) table.getValueAt(row, 0);
+        this.nomeProduto = (String) table.getValueAt(row, 1);
+        this.maiorValorAtual = (double) table.getValueAt(row, 2);
+        this.nomeVendedor = (String) table.getValueAt(row, 4);
         
         return button;
     }
@@ -68,7 +66,7 @@ public class ButtonEditor extends DefaultCellEditor {
   public Object getCellEditorValue() {
     if (isPushed)  {
         
-        IntDarLance lance = new IntDarLance(this.codProduct, this.product, this.description, this.currentHighestBid, this.sellerName);
+        CadastroDeLance lance = new CadastroDeLance(this.codigoProduto, this.nomeProduto, this.maiorValorAtual, this.nomeVendedor);
         lance.show();
     }
     isPushed = false;

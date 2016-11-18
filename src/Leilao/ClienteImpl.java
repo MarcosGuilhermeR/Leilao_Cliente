@@ -11,7 +11,7 @@ package Leilao;
  * @author stephany
  */
 
-import GraphicInterfaces.IntListaProdutos;
+import GraphicInterfaces.IniciarAplicacao;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
@@ -31,7 +31,7 @@ public class ClienteImpl extends UnicastRemoteObject implements InterfaceCli {
     @Override
     public void receberNotificacao(String msg) throws RemoteException {
         System.out.println("Notificação: " + msg);
-        IntListaProdutos.showNotif(msg);
+        IniciarAplicacao.showNotif(msg);
     }
  
     

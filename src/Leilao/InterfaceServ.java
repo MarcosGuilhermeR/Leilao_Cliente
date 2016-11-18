@@ -22,7 +22,7 @@ public interface InterfaceServ extends Remote {
     
     byte[] listaProdutosAtivos() throws RemoteException; // envio de dados via hashmap serializado
     boolean darLance(long codProduct, double Value, String bidderName) throws RemoteException;
-    boolean cadastrarProduto(long codProduct, String name, String description, double beginPrice, int timeauction, String sellerName) throws RemoteException;
+    boolean cadastrarProduto(long codProduct, String name, double beginPrice, int timeauction, String sellerName) throws RemoteException;
     boolean encerrarLeilao(long codProduct) throws RemoteException;
     boolean cadastrarRefCli(String name, InterfaceCli cli);
     
