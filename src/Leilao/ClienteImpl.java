@@ -33,7 +33,7 @@ public class ClienteImpl extends UnicastRemoteObject implements InterfaceCli {
     @Override
     public void receberNotificacao(String msg) throws RemoteException {
         if (msg.equals("atualizar")){
-            IntListaProdutos listProdutos = new IntListaProdutos();
+            IntListaProdutos.atualizaProdutos();
             
             //MainWin mainWin = new MainWin("");
             

@@ -53,9 +53,14 @@ public class IntListaProdutos {
     /**
      * Cria Frame e adiciona painel com componentes dentro
      */
+    static MainWin mainPanel;
+    
+    public static void atualizaProdutos(){
+        mainPanel.atualizarProdutos();
+    }
     static void createAndShowGui() {
 
-        MainWin mainPanel = new MainWin("");
+        mainPanel = new MainWin("");
 
         IntListaProdutos.wrapframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         IntListaProdutos.wrapframe.getContentPane().add(mainPanel);
@@ -238,7 +243,7 @@ class MainWin extends JPanel {
                     }
 
                 } else {
-                    JOptionPane.showMessageDialog(new JFrame(), "Não existe nenhum leilão ativo.", "Leilões Ativos", JOptionPane.ERROR_MESSAGE);
+                    //JOptionPane.showMessageDialog(new JFrame(), "Não existe nenhum leilão ativo.", "Leilões Ativos", JOptionPane.ERROR_MESSAGE);
                     model.setDataVector(null, COL_NAMES);
                 }
 
