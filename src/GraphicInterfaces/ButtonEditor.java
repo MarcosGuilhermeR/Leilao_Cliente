@@ -53,6 +53,7 @@ public class ButtonEditor extends DefaultCellEditor {
         }
         label = (value ==null) ? "" : value.toString();
         button.setText( label );
+        button.setText( "Visualizar");
         isPushed = true;
     
         this.codProduct = (long) table.getValueAt(row, 0);
