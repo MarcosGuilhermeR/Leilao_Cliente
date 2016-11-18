@@ -34,6 +34,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class IntListaProdutos  {
     
+    int teste;
+    
     public static JFrame wrapframe =  new JFrame("Leilões Ativos");
     
     /**
@@ -116,7 +118,7 @@ public class IntListaProdutos  {
 class MainWin extends JPanel {
     
     
-   private final String[] COL_NAMES = { "Código", "Produto", "Descrição", "Lance Atual", "Lance por", "Vendedor", "Participar" };
+   private final String[] COL_NAMES = { "Código", "Produto", "Lance Atual", "Lance por", "Vendedor", "Participar" };
    private final DefaultTableModel model = new DefaultTableModel(COL_NAMES, 0);
    
    /**
