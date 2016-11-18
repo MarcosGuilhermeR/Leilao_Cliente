@@ -11,9 +11,7 @@ package Leilao;
  * @author stephany
  */
 
-import GraphicInterfaces.IntListaProdutos;
-
-import java.math.MathContext;
+import GraphicInterfaces.IniciarAplicacao;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
@@ -24,7 +22,7 @@ public class ClienteImpl extends UnicastRemoteObject implements InterfaceCli {
     public ClienteImpl() throws RemoteException {
         super(0);    
     }
-
+ 
     /**
      * Recebe notificações do servidor e mostra os na class IntListaProdutos;
      * @param msg
@@ -32,15 +30,8 @@ public class ClienteImpl extends UnicastRemoteObject implements InterfaceCli {
      */
     @Override
     public void receberNotificacao(String msg) throws RemoteException {
-        if (msg.equals("atualizar")){
-            IntListaProdutos.atualizaProdutos();
-            
-            //MainWin mainWin = new MainWin("");
-            
-        }else{
-            System.out.println("Notificação: " + msg);
-            IntListaProdutos.showNotif(msg);
-        }
+        System.out.println("Notificação: " + msg);
+        IniciarAplicacao.showNotif(msg);
     }
  
     
